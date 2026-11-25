@@ -10,6 +10,16 @@ Import a folder of `.txt` notes into Apple Notes on macOS, keeping the folder la
 - Line breaks, blank lines and runs of spaces are kept.
 - Your source folder is never changed; the script works on a temporary copy.
 
+## Get started
+
+Requires macOS with the Notes app.
+
+```bash
+git clone https://github.com/ibrah006/txt-to-apple-notes.git
+cd txt-to-apple-notes
+chmod +x import_notes.sh
+```
+
 ## Usage
 
 ```bash
