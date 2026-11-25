@@ -60,19 +60,19 @@ on run argv
     if folderPath is "" then
       make new note at (default folder of account acctName) with properties {body:noteBody}
     else
-      set container to account acctName
+      set parentFolder to account acctName
       set AppleScript's text item delimiters to "/"
       set parts to text items of folderPath
       set AppleScript's text item delimiters to ""
       repeat with p in parts
         set n to contents of p
-        if (exists folder n of container) then
-          set container to folder n of container
+        if (exists folder n of parentFolder) then
+          set parentFolder to folder n of parentFolder
         else
-          set container to make new folder at container with properties {name:n}
+          set parentFolder to make new folder at parentFolder with properties {name:n}
         end if
       end repeat
-      make new note at container with properties {body:noteBody}
+      make new note at parentFolder with properties {body:noteBody}
     end if
   end tell
 end run
